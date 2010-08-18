@@ -1,0 +1,26 @@
+<p>
+    List all by Authors
+    <p/>
+    <table border="1">
+        <tr>
+            <th>Authors</th>
+            <th>Title</th>
+        </tr>
+
+        <?r @authors.each do | author | ?>
+        <tr>
+            <td>
+                #{author.last_name}, #{author.first_name}
+            </td>
+            <td>
+                <?r author.books.each do | b | ?>
+                    #{b.title}
+                <?r end ?>
+            </td>
+        </tr>
+        <?r end ?>
+    </table>
+    <p/>
+    <a href="#{r(:index)}">Go to Title page</a>
+</p>
+

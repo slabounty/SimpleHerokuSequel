@@ -1,0 +1,20 @@
+/* Header CSS */
+#header {
+    background:#9DA9EE;
+    color: white;
+    margin-bottom: 0;
+    padding: 0.25em;
+}
+
+#nav {
+    background:#9DA9EE;
+    color: black;
+    padding: 0.5em;
+}
+
+/* Footer CSS */
+#footer {
+    background:#9DA9EE;
+    color: black;
+}
+

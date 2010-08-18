@@ -1,0 +1,31 @@
+<!-- view/page.xhtml -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <!-- Use the page.css in the public directory and set title based on
+        what's set in the associated method.
+        -->
+        <link rel="stylesheet" type="text/css" href="/css/page.css"/>
+
+        <title>#@title</title> 
+    </head>
+    <body>
+        <div id="header">
+            <h1>Ramaze, Sequel, and Heroku Test</h1>
+        </div>
+
+        <!-- Display the actual content. This will come from the method or the
+        associated view/*.xhtml file
+        -->
+        #@content
+
+        <!-- Set the footer in the center of the screen. -->
+        <div id="footer" style="text-align: center;">
+            <h5> Powered by Ramaze </h5>
+        </div>
+    </body>
+</html>
+
