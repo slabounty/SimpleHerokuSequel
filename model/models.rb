@@ -7,7 +7,7 @@ require 'sequel'
 # Open the polls database. This must be done before we access the models
 # that use it.
 DB = ENV['DATABASE_URL'] ? 
-    Sequel.postgresql(ENV['DATABASE_URL'])  :
+    Sequel.postgres(ENV['DATABASE_URL'])  :
     Sequel.sqlite("library.sqlite") 
 
 #
