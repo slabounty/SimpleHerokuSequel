@@ -6,7 +6,9 @@ require 'sequel'
 
 # Open the polls database. This must be done before we access the models
 # that use it.
-DB = Sequel.sqlite(ENV['DATABASE_URL'] || "library.sqlite") 
+DB = ENV['DATABASE_URL'] ? 
+    Sequel.postgresql(ENV['DATABASE_URL'])  :
+    Sequel.sqlite("library.sqlite") 
 
 #
 # This is the model for the authors and is backed by the :authors table in the
