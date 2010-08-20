@@ -1,0 +1,6 @@
+namespace :db do
+    task :migrate do
+        version = ENV['VERSION'] ? "-M #{ENV['VERSION']}" : ""
+        system "sequel -m dbMigration #{version} #{ENV['DATABASE_URL'] || 'sqlite://library.sqlite'} "
+    end
+end
