@@ -4,11 +4,9 @@ require 'rubygems'
 require 'ramaze'
 require 'sequel'
 
-# Open the polls database. This must be done before we access the models
+# Open the library's database. This must be done before we access the models
 # that use it.
-DB = ENV['DATABASE_URL'] ? 
-    Sequel.postgres(ENV['DATABASE_URL'])  :
-    Sequel.sqlite("library.sqlite") 
+Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://library.sqlite')
 
 #
 # This is the model for the authors and is backed by the :authors table in the
