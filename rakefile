@@ -12,7 +12,7 @@ namespace :db do
         db = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://library.sqlite')
         dir = "dbMigration"
         version = ENV['VERSION'] ? "#{ENV['VERSION']}" : ""
-        puts "db = #{db} dir = #{dir} version = #{version}"
+        puts "m = #{m} db = #{db} dir = #{dir} version = #{version}"
         m.apply(db, dir)
     end
 end
