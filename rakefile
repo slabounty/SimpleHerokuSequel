@@ -2,17 +2,15 @@ namespace :db do
     require 'rubygems'
     require 'sequel'
     Sequel.extension :migration
-#    task :migrate do
-#        version = ENV['VERSION'] ? "-M #{ENV['VERSION']}" : ""
-#        system "sequel -m dbMigration #{version} #{ENV['DATABASE_URL'] || 'sqlite://library.sqlite'} "
-#    end
 
     task :migrate do
         m = Sequel::Migrator
         db = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://library.sqlite')
         dir = "dbMigration"
-        version = ENV['VERSION'] ? "#{ENV['VERSION']}" : ""
-        puts "m = #{m} db = #{db} dir = #{dir} version = #{version}"
-        m.apply(db, dir)
+
+        target = ENV['TARGET'] ? ENV['TARGET'].to_i : nil
+        current = ENV['CURRENT'] ? ENV['CURRENT'].to_i : nil
+
+        m.run(db, dir, :target => target, :current => current)
     end
 end
